@@ -33,8 +33,8 @@ public class KafkaConsumerExample
     public void consumeMessage()
     {
         // launch 3 threads to consume
-        int numConsumers = 3;
-        final String topic = "test";
+        int numConsumers = 1;
+        final String topic = "example";
         final ExecutorService executor = Executors.newFixedThreadPool(numConsumers);
         final List<KafkaConsumerRunner> consumers = new ArrayList<KafkaConsumerRunner>();
         for (int i = 0; i < numConsumers; i++) {
