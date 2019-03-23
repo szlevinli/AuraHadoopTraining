@@ -21,7 +21,7 @@ public class HdfsMyExample {
     }
 
     public static void runAll() throws Exception {
-        String hdfsUri = "hdfs://10.0.0.114:9000";
+        String hdfsUri = "hdfs://localhost:9000";
         String path = "/test";
         String fileName = "hello.txt";
         String fileContent = "hello world!";
@@ -40,7 +40,7 @@ public class HdfsMyExample {
             conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
             conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
             // Set Hadoop User
-            System.setProperty("HADOOP_USER_NAME", "bigdata");
+            System.setProperty("HADOOP_USER_NAME", "levin");
             System.setProperty("hadoop.home.dir", "/");
             // Get HDFS FileSystem Object
             fs = FileSystem.get(URI.create(hdfsUri), conf);
